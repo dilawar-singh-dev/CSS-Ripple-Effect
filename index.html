@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Effect</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body {
+            width:100%;
+            height:100%;
+            margin:0;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ripple {
+            width: 1px;
+            height: 1px;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+            display: flex;
+            border-radius: 50%;
+            transform: scale(1);
+            animation: ripple_effect 3s infinite;
+            transition: 0.5s ease-in-out;
+        }
+
+        .ripple-1 {
+            animation-delay: 0s;
+            background-color: rgba(255, 0, 0, 0.534);
+        }
+
+        .ripple-2 {
+            animation-delay: 0.5s;
+            background-color: rgba(229, 255, 0, 0.466);
+        }
+        .ripple-3 {
+            animation-delay: 1s;
+            background-color: rgba(0, 255, 200, 0.493);
+        }
+        .ripple-4 {
+            animation-delay: 1.5s;
+            background-color: rgba(4, 0, 255, 0.521);
+        }
+        .ripple-5 {
+            animation-delay: 2s;
+            background-color: rgba(234, 0, 255, 0.514);
+        }
+
+        @keyframes ripple_effect {
+            to {
+                width: 100px;
+                height: 100px;
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ripple ripple-1"></div>
+    <div class="ripple ripple-2"></div>
+    <div class="ripple ripple-3"></div>
+    <div class="ripple ripple-4"></div>
+    <div class="ripple ripple-5"></div>
+</body>
+
+</html>
